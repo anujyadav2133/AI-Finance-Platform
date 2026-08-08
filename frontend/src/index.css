@@ -1,0 +1,153 @@
+:root {
+  --bg-dark: #0B0E14;
+  --bg-card: #131722;
+  --bg-card-hover: #1E222D;
+  --bg-card-header: #191E2B;
+  --border-color: #2A2E39;
+  --accent-cyan: #00F2FE;
+  --accent-blue: #4FACFE;
+  --accent-purple: #7F00FF;
+  --accent-green: #00E676;
+  --accent-red: #FF5252;
+  --accent-yellow: #FFB300;
+  --text-main: #F0F4F8;
+  --text-muted: #787B86;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+.mono {
+  font-family: var(--font-mono);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Glow effects */
+.glow-cyan {
+  box-shadow: 0 0 15px rgba(0, 242, 254, 0.25);
+}
+.glow-green {
+  box-shadow: 0 0 12px rgba(0, 230, 118, 0.2);
+}
+.glow-red {
+  box-shadow: 0 0 12px rgba(255, 82, 82, 0.2);
+}
+
+/* Common Layout Card */
+.fin-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 16px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.fin-card:hover {
+  border-color: #363C4E;
+}
+
+.fin-btn {
+  background: linear-gradient(135deg, #00F2FE 0%, #4FACFE 100%);
+  color: #000;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.fin-btn:hover {
+  opacity: 0.92;
+  transform: translateY(-1px);
+}
+
+.fin-btn-secondary {
+  background: #1E222D;
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  font-weight: 500;
+  border-radius: 6px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.fin-btn-secondary:hover {
+  background: #2A2E39;
+}
+
+.fin-input {
+  background: #191E2B;
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-family: var(--font-sans);
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.fin-input:focus {
+  border-color: var(--accent-cyan);
+}
+
+/* Badge tags */
+.badge-bullish {
+  background: rgba(0, 230, 118, 0.15);
+  color: var(--accent-green);
+  border: 1px solid rgba(0, 230, 118, 0.3);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.badge-bearish {
+  background: rgba(255, 82, 82, 0.15);
+  color: var(--accent-red);
+  border: 1px solid rgba(255, 82, 82, 0.3);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.badge-neutral {
+  background: rgba(255, 179, 0, 0.15);
+  color: var(--accent-yellow);
+  border: 1px solid rgba(255, 179, 0, 0.3);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+}
