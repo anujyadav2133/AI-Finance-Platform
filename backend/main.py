@@ -6,6 +6,7 @@ from datetime import datetime, timedelta
 from typing import List, Dict, Any, Optional
 
 from fastapi import FastAPI, Query, HTTPException
+from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
@@ -258,4 +259,12 @@ def train_custom_model(req: CustomTrainRequest):
         "feature_importances": pipeline_res["feature_importances"],
         "status": "CUSTOM MODEL TRAINED & DEPLOYED"
     }
+
+# ==========================================
+# MOUNT BUILT REACT FRONTEND STATIC FILES
+# ==========================================
+dist_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "frontend", "dist"))
+if os.path.exists(dist_dir):
+    app.mount("/", StaticFiles(directory=dist_dir, html=True), name="static")
+
 
